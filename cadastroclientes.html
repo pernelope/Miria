@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>Cadastro de Pessoa</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color:Violet;" onload='gerenciar_cookies()'>
+
+<div style="background-color:whidt;" class="jumbotron text-center">
+  <h1 style="color:Gray;">Cadastro de Cliente</h1> 
+  <img src="imagem.jpeg" alt="imagem" width="150" height="170">
+</div>
+  
+<div class="container">
+  <div class="row">
+    <div  class="col-sm-3">
+       <span id='conta'>Acesso: 0</span>
+    </div>
+    <div class="col-sm-9">
+        <form action="processing_pessoa.php" method="post" onsubmit='return validar_envio()'>
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" class="form-control" id="nome" placeholder="digite seu nome" name="nome">
+            </div>
+            <div class="form-group">
+                <label for="nome">Contato:</label>
+                <input type="text" class="form-control" id="nome" placeholder="digite seu contato" name="nome">
+            </div>
+            <div class="form-group">
+                <label for="nome">Endereco:</label>
+                <input type="text" class="form-control" id="nome" placeholder="digite seu endereco" name="nome">
+            </div>
+            <div class="form-group">
+                <label for="cpf">Cpf:</label>
+                <span id="msgcpf"></span>
+                <input type="text" class="form-control" onclick='verifica_cpf()' id="cpf" placeholder="digite seu cpf" name="cpf">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="digite seu email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="genero">Genero:</label>
+                <select class="form-control" name="genero" id="genero">
+                    <option value='F'>Feminino</option>
+                    <option value='M'>Masculino</option>
+                    <option value='O'>Outro</option>
+                </select>
+            </div> 
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <span id="msgsenha"></span>
+                <input type="password" class="form-control" onclick='verifica_senhas()' id="senha" placeholder="Digite sua senha" name="senha">
+            </div>
+            <div class="form-group">
+                <label for="confirmesenha">Redigite Senha:</label>
+                <input type="password" class="form-control" id="confirmesenha" placeholder="Digite novamente a senha" name="confirmesenha">
+            </div>
+            
+            <button style="color:black;background-color:Gray;" type="submit" class="btn btn-default">Enviar</button>
+        </form>
+    </div>
+    </div>
+</div>
+</body>
+<script src=validator.js></script>
+</html>
